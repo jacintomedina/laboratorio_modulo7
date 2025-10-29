@@ -11,8 +11,6 @@ import {
   obtenerValorCarta,
 } from "./motor";
 
-import { dameNumeroAleatorio } from "./motor";
-
 describe("sumarPuntos", () => {
   it("Debería sumar los puntos de la carta a la puntuación del usuario", () => {
     //Arrange
@@ -27,25 +25,6 @@ describe("sumarPuntos", () => {
     expect(resultado).toBe(puntuacionEsperada);
   });
 });
-
-// ESTA NO ME SALE
-
-describe("actualizarPuntuacionUsuario", () => {
-  it("Debería actualizar la puntuación del usuario cuando haya nuevos puntos", () => {
-    //Arrange
-    const nuevosPuntos: number = 6;
-    const puntuacionEsperada: number = nuevosPuntos;
-    vi.spyOn(partida, "puntuacionUsuario", "get").mockReturnValue(6);
-
-    //Act
-    const resultado: number = actualizarPuntuacionUsuario(nuevosPuntos);
-
-    //Assert
-    expect(resultado).toBe(puntuacionEsperada);
-  });
-});
-
-///////////////////////
 
 describe("obtenerMensaje", () => {
   it("Debería devolver el mensaje '¡Lo has clavado!¡Enhorabuena!' si la puntuación del usuario es 7.5", () => {

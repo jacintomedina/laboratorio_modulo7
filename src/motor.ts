@@ -73,7 +73,7 @@ export const sumarPuntos = (puntosCarta: number) => {
 };
 
 export const actualizarPuntuacionUsuario = (nuevosPuntos: number) => {
-  return (partida.puntuacionUsuario = nuevosPuntos);
+  partida.puntuacionUsuario = nuevosPuntos;
 };
 
 export const obtenerMensaje = (): string => {
