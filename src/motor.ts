@@ -1,6 +1,6 @@
 import { partida } from "./modelo";
 
-export const dameNumeroAleatorio = () => {
+export const dameNumeroAleatorio = (): number => {
   return Math.floor(Math.random() * 10) + 1;
 };
 
@@ -73,7 +73,7 @@ export const sumarPuntos = (puntosCarta: number) => {
 };
 
 export const actualizarPuntuacionUsuario = (nuevosPuntos: number) => {
-  partida.puntuacionUsuario = nuevosPuntos;
+  return (partida.puntuacionUsuario = nuevosPuntos);
 };
 
 export const obtenerMensaje = (): string => {
@@ -85,7 +85,7 @@ export const obtenerMensaje = (): string => {
     return "Has sido muy conservador";
   } else if (partida.puntuacionUsuario === 5) {
     return "Te ha entrado el canguelo, eh?";
-  } else if (partida.puntuacionUsuario >= 5) {
+  } else if (partida.puntuacionUsuario > 5) {
     return "Casi casi...";
   } else {
     return "Upss... No tendrías que pasar por aquí";
